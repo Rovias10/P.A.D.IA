@@ -1,5 +1,5 @@
 <?php 
-require 'db.php';
+require 'config/db.php';
 $sql = "SELECT l.*, a.type, a.config 
         FROM alerts_logs l 
         LEFT JOIN alerts a ON l.alert_id = a.id 
@@ -235,7 +235,7 @@ if(count($parches) > 0):
                 url: document.getElementById('inputUrl').value,
                 method: document.getElementById('inputMethod').value
             };
-            fetch('api-crear-alerta.php', {
+            fetch('api/api-crear-alerta.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
@@ -332,7 +332,7 @@ if(count($parches) > 0):
         function cargarAlertasParaBorrar() {
             const lista = document.getElementById('listaAlertasBorrar');
             lista.innerHTML = '<li class="list-group-item">Cargando...</li>';
-            fetch('listtar_alertas.php').then(r => r.json()).then(data => {
+            fetch('api/listar_alertas.php').then(r => r.json()).then(data => {
                 lista.innerHTML = '';
                 if(data.length === 0) {
                     lista.innerHTML = '<li class="list-group-item">No hay webs configuradas.</li>'; return;
@@ -349,7 +349,7 @@ if(count($parches) > 0):
 
         function borrarAlerta(id) {
             if(!confirm('¿Seguro que quieres borrar?')) return;
-            fetch('api-borrar-alerta.php', {
+            fetch('api/api-borrar-alerta.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ id: id })

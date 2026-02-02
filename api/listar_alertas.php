@@ -1,6 +1,6 @@
 <?php 
 header('Content-Type: application/json');
-require "./db.php";
+require "../config/db.php";
 
 $sql= "SELECT * from alerts";
 

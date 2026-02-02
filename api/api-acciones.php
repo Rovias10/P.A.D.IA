@@ -1,6 +1,6 @@
 <?php 
 header('Content-Type: application/json');
-require 'db.php';
+require '../config/db.php';
 
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
@@ -18,8 +18,8 @@ if (!$alert_id) {
 
 try {
     
-    if (file_exists('saturacion.lock')) {
-        unlink('saturacion.lock'); // Elimina el bloqueo
+    if (file_exists('../saturacion.lock')) {
+        unlink('../saturacion.lock'); 
     }
 
    
@@ -35,9 +35,7 @@ try {
         ]);
     }
 
-    // ---------------------------------------------------------
-    // 3. ACTUALIZACIÓN DEL MONITOR (Poner en VERDE)
-    // ---------------------------------------------------------
+    
     $sqlLog = "INSERT INTO alerts_logs (alert_id, status, message, response_time) 
                VALUES (:aid, 'RESOLVED', :msg, 15)";
     
