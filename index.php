@@ -113,7 +113,7 @@ if(count($parches) > 0):
 ?>
 <div class="card shadow-sm mt-4 border-success">
     <div class="card-header bg-success text-white">
-        <h5 class="mb-0">🛡️ Contramedidas Generadas (Auto-Patching)</h5>
+        <h5 class="mb-0">Contramedidas Generadas (Auto-Patching)</h5>
     </div>
     <div class="card-body bg-dark text-light p-0">
         <table class="table table-dark table-hover mb-0" style="font-family: monospace;">
@@ -174,7 +174,7 @@ if(count($parches) > 0):
         <div class="modal-dialog">
             <div class="modal-content border-danger">
                 <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title">☠️ IA Red Team: Ataque Dirigido</h5>
+                    <h5 class="modal-title">IA Red Team: Ataque Dirigido</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body bg-light">
@@ -193,7 +193,7 @@ if(count($parches) > 0):
                         </div>
 
                         <button type="submit" class="btn btn-dark w-100 fw-bold">
-                            🔍 ESCANEAR Y DESTRUIR
+                            ESCANEAR Y DESTRUIR
                         </button>
                     </form>
                 </div>
@@ -268,12 +268,12 @@ if(count($parches) > 0):
                     setTimeout(() => {
                         output.innerHTML += `<span class='console-line console-danger blink'>> EJECUTANDO: ${vector} 💀</span>`;
                         btn.className = 'btn btn-danger w-100 fw-bold';
-                        btn.innerHTML = '⚠️ ATAQUE MASIVO EN CURSO';
+                        btn.innerHTML = 'ATAQUE MASIVO EN CURSO';
                         
                         setTimeout(() => {
                             btn.disabled = false;
                             btn.className = 'btn btn-outline-light w-100';
-                            btn.innerHTML = '🔄 REINICIAR SISTEMA (Limpiar Pantalla)';
+                            btn.innerHTML = 'REINICIAR SISTEMA (Limpiar Pantalla)';
                             btn.onclick = function(ev) {
                                 ev.preventDefault();
                                 location.reload();
